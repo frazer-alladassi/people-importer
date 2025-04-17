@@ -41,13 +41,12 @@ public class ExcelStreamParser {
     }
 
     private Person mapRowToPerson(Row row) {
-        Person person = new Person(
+        return new Person(
                 getStringValue(row.getCell(0)),
                 getStringValue(row.getCell(1)),
                 getStringValue(row.getCell(2)),
                 getStringValue(row.getCell(3)),
                 getStringValue(row.getCell(4)));
-        return person;
     }
 
     private String getStringValue(Cell cell) {

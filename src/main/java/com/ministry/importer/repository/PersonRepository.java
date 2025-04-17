@@ -26,6 +26,10 @@ public class PersonRepository implements AutoCloseable {
         createTableIfNotExists();
     }
 
+    PersonRepository(HikariDataSource dataSource) {
+        this.dataSource = dataSource;
+    }
+
     private static HikariDataSource createDataSource(Properties config) {
         HikariConfig hikariConfig = new HikariConfig();
         hikariConfig.setJdbcUrl(config.getProperty("db.url"));

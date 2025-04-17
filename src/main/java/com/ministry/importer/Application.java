@@ -22,9 +22,7 @@ public class Application {
             int importedCount = importService.importFromFile(filePath);
             long duration = System.currentTimeMillis() - startTime;
 
-            logger.info(String.format(
-                    "Successfully imported %d people in %d ms",
-                    importedCount, duration));
+            logger.info("Successfully imported {} people in {} ms", importedCount, duration);
 
         }
     }
